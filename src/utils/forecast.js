@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
         }else if(body.cod === '400'){
             callback('Unable to find location. Try another search.', undefined)
         }else{    
-            data = body.weather[0].description + '. It is currently ' + body.main.temp + ' degrees out.'
+            data = body.weather[0].description + '. It is currently ' + body.main.temp + ' degrees out. Humidity : ' + body.main.humidity + ' %'
             callback(undefined, data)
         }
     })
